@@ -14,19 +14,10 @@ Este é um projeto simples de Amigo Secreto, onde você pode adicionar nomes de 
 - CSS
 - JavaScript
 
-## Estrutura do Projeto
-amigo-secreto/
-├── assets/
-│   └── amigo-secreto.png
-│   └── play_circle_outline.png
-├── style.css
-├── app.js
-└── index.html
-
 ## Acesse o Projeto
 Você pode acessar o projeto online clicando no link abaixo:
 
-Jogo Amigo Secreto
+https://ribeiroarley.github.io/amigo-secreto/
  
 ## Desenvolvido por:
 
