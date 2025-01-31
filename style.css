@@ -200,11 +200,11 @@ button {
 .button-draw {
     display: flex;
     align-items: center;
-    width: 100%;
     padding: 10px 40px;
     color: var(--color-white);
     background-color: var(--color-button);
     font-size: 1rem;
+    border-radius: 25px; /* Adiciona borda arredondada */
 }
 
 .button-draw img {
@@ -217,19 +217,7 @@ button {
 
 /* Rodapé */
 .footer {
-    background-color: var(--color-primary);
-    color: var(--color-white);
-    text-align: center;
-    padding: 10px; /* Ajuste de padding para minimalismo */
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    font-family: "Inter", sans-serif;
-    font-size: 0.75rem; /* Ajuste de tamanho de fonte para minimalismo */
-}
-
-.footer p {
-    margin: 0; /* Remoção de margem para minimalismo */
+    display: none; /* Remove o rodapé */
 }
 
 /* Media Queries */
