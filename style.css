@@ -52,6 +52,7 @@ body {
     align-items: center;
     padding: 20px;
     width: 100%;
+    overflow-y: auto; /* Adiciona rolagem vertical */
 }
 
 /* Títulos */
@@ -76,7 +77,7 @@ body {
     font-family: "Inter", serif;
     font-size: 1.5rem;
     font-weight: 700;
-    color: var (--color-primary);
+    color: var(--color-primary);
     margin-bottom: 10px;
     text-align: center;
 }
@@ -99,9 +100,15 @@ body {
 }
 
 .button-container {
-    width: 300px;
+    width: 100%;
+    display: flex;
     justify-content: center;
-    margin-top: 20px; /* Adiciona espaçamento entre as caixas e o botão */
+    position: fixed;
+    bottom: 60px; /* Ajusta a posição do botão acima do rodapé */
+    left: 0;
+    right: 0;
+    background-color: var(--color-secondary);
+    padding: 10px 0;
 }
 
 /* Estilos de entrada de texto */
