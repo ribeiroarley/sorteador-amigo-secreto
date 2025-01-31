@@ -45,8 +45,10 @@ function sortearAmigo() {
     const indiceAleatorio = Math.floor(Math.random() * amigos.length);
     const nomeSorteado = amigos[indiceAleatorio];
 
+    // O emoji agora só aparece quando um nome for sorteado
     document.getElementById('resultado').innerHTML = `<strong>${nomeSorteado} 🎉</strong>`;
 
     amigos.splice(indiceAleatorio, 1); // Remove o nome sorteado
     atualizarLista();
 }
+
