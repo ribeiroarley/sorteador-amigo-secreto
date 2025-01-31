@@ -19,6 +19,8 @@ Clique em "Sortear amigo" para descobrir quem é o sorteado! 🎉
 ## Acesse o Projeto 🌐
 Se preferir, você pode acessar o projeto online através deste link:
 
+https://ribeiroarley.github.io/sorteador-amigo-secreto/
+
 # Desenvolvido por 💼
 Arley Ribeiro da Silva Xavier
 
