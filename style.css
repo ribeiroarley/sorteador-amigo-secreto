@@ -200,7 +200,7 @@ button {
 }
 
 .button-draw img {
-    margin-right: 40px;
+    margin-right: 10px; /* Ajusta o espaçamento da imagem */
 }
 
 .button-draw:hover {
@@ -228,6 +228,7 @@ button {
 @media (max-width: 768px) {
     .input-wrapper {
         flex-direction: column;
+        align-items: center;
     }
 
     .input-name, .button-add {
@@ -238,5 +239,25 @@ button {
     .button-add {
         margin-top: 10px;
         border-radius: 25px;
+    }
+
+    .lists-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .name-list-container, .result-box-container {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .button-draw {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .button-draw img {
+        margin-right: 0;
+        margin-bottom: 10px;
     }
 }
