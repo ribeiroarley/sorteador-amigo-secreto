@@ -29,6 +29,7 @@ body {
     flex-direction: column;
     height: 100%;
     width: 100%;
+    padding-bottom: 60px; /* Espaço para o rodapé fixo */
 }
 
 /* Banner */
@@ -213,7 +214,7 @@ button {
     color: var(--color-white);
     text-align: center;
     padding: 20px;
-    position: absolute;
+    position: fixed;
     bottom: 0;
     width: 100%;
     font-family: "Inter", sans-serif;
