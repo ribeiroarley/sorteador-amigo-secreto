@@ -112,7 +112,7 @@ button {
     width: 100%;
     max-width: 800px;
     margin-top: 20px;
-    gap: 10px;
+    gap: 20px; /* Aumentado o espaçamento entre os elementos */
 }
 
 .name-list-container, .result-box-container {
@@ -120,12 +120,13 @@ button {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 10px;
+    padding: 15px;
     border: 2px solid var(--color-primary);
     border-radius: 10px;
     background-color: var(--color-white);
 }
 
+/* Lista de nomes adicionados */
 .name-list {
     display: flex;
     flex-wrap: wrap;
@@ -146,24 +147,35 @@ button {
     gap: 8px;
 }
 
+/* Resultado do sorteio */
 .result-box {
     margin-top: 15px;
     background-color: var(--color-secondary);
     border: 2px solid var(--color-primary);
     border-radius: 10px;
-    padding: 10px 20px;
-    font-size: 22px;
+    padding: 15px 25px;
+    font-size: 24px;
     font-weight: bold;
     text-align: center;
-    color: black; /* Alterado para preto */
+    color: black; /* Nome sorteado preto */
 }
 
-/* Botão de sortear */
+/* Adicionando emoji ao nome sorteado */
+.result-box::after {
+    content: " 🎉"; /* Emoji de festa */
+    font-size: 24px;
+}
+
+/* Botão de sortear com espaçamento */
 .button-draw {
     display: flex;
     align-items: center;
+    justify-content: center;
     background-color: var(--color-button);
     color: var(--color-white);
+    margin-top: 20px; /* Criando espaço entre os nomes e o botão */
+    padding: 14px 25px;
+    font-size: 18px;
 }
 
 .button-draw:hover {
