@@ -76,7 +76,7 @@ body {
     font-family: "Inter", serif;
     font-size: 1.5rem;
     font-weight: 700;
-    color: var(--color-primary);
+    color: var (--color-primary);
     margin-bottom: 10px;
     text-align: center;
 }
@@ -213,16 +213,16 @@ button {
     background-color: var(--color-primary);
     color: var(--color-white);
     text-align: center;
-    padding: 20px;
+    padding: 10px; /* Ajuste de padding para minimalismo */
     position: fixed;
     bottom: 0;
     width: 100%;
     font-family: "Inter", sans-serif;
-    font-size: 0.875rem;
+    font-size: 0.75rem; /* Ajuste de tamanho de fonte para minimalismo */
 }
 
 .footer p {
-    margin: 5px 0;
+    margin: 0; /* Remoção de margem para minimalismo */
 }
 
 /* Media Queries */
