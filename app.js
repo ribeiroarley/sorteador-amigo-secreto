@@ -34,14 +34,4 @@ function sortearAmigo() {
     const indiceAleatorio = Math.floor(Math.random() * amigos.length);
     const nomeSorteado = amigos[indiceAleatorio];
     document.getElementById('resultado').textContent = nomeSorteado;
-
-    // Remove o nome sorteado da lista
-    amigos.splice(indiceAleatorio, 1);
-    atualizarLista();
-}
-
-function verificarEnter(event) {
-    if (event.key === "Enter") {
-        adicionarAmigo();
-    }
 }
