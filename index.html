@@ -25,12 +25,13 @@
     <main class="main-content">
         <!-- Banner principal com o título e imagem -->
         <header class="header-banner">
+            <!-- Título principal do Amigo Secreto -->
             <h1 class="main-title">Amigo Secreto</h1>
             <!-- Imagem ilustrativa do tema "Amigo Secreto" -->
             <img src="assets/amigo-secreto.png" alt="Imagem representativa de amigo secreto">
         </header>
         
-        <!-- Seção onde o usuário pode adicionar nomes -->
+        <!-- Seção onde o usuário pode adicionar nomes e interagir com o sorteio -->
         <section class="input-section">
             <!-- Título da seção para entrada de dados -->
             <h2 class="section-title">Digite o nome dos seus amigos</h2>
@@ -43,25 +44,28 @@
                 <button class="button-add" onclick="adicionarAmigo()">Adicionar</button>
             </div>
             
-            <!-- Container com as listas de nomes -->
+            <!-- Container com as listas de nomes e regras -->
             <div class="lists-container">
                 <!-- Seção para exibir os nomes adicionados -->
                 <div class="name-list-container">
                     <h3 class="list-title">Nomes Adicionados</h3>
-                    <!-- Aqui são listados os amigos que foram adicionados -->
+                    <!-- Aqui são listados os amigos que foram adicionados e ainda não sorteados -->
                     <div id="listaAmigos" class="name-list"></div>
                 </div>
                 
-                <!-- Seção para mostrar o nome sorteado -->
+                <!-- Seção para mostrar as regras do sorteio -->
                 <div class="result-box-container">
-                    <h3 class="list-title">Nome Sorteado</h3>
-                    <!-- Exibe o resultado do sorteio do amigo secreto -->
-                    <div id="resultado" class="result-box" aria-live="polite"></div>
+                    <h3 class="list-title">Regras</h3>
+                    <!-- Mensagem fixa e amigável visível ao carregar a página -->
+                    <div id="resultado" class="result-box" aria-live="polite">
+                        O presente deve custar de R$ 100 a R$ 200 reais, tá bem? Vamos caprichar!
+                    </div>
                 </div>
             </div>
 
             <!-- Container para o botão que realiza o sorteio -->
             <div class="button-container">
+                <!-- Botão que inicia o sorteio de um amigo -->
                 <button class="button-draw" onclick="sortearAmigo()" aria-label="Sortear amigo secreto">
                     <!-- Ícone do botão de sortear -->
                     <img src="assets/play_circle_outline.png" alt="Ícone para sortear">
@@ -70,7 +74,7 @@
             </div>
         </section>
     </main>
-
+    
     <!-- Link para o arquivo JavaScript que contém as funcionalidades -->
     <script src="app.js" defer></script>
 </body>

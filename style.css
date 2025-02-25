@@ -1,15 +1,15 @@
 /* Definição das variáveis de cores para facilitar a manutenção e consistência */
 :root {
-    --color-primary: #4B69FD;        /* Cor primária (usada em muitos elementos, como fundo) */
-    --color-secondary: #FFF9EB;      /* Cor secundária (fundo das seções) */
-    --color-tertiary: #C4C4C4;       /* Cor terciária (usada em botões e bordas) */
-    --color-button: #fe652b;         /* Cor do botão principal */
-    --color-button-hover: #e55720;   /* Cor do botão principal quando o mouse passa por cima */
-    --color-text: #444444;           /* Cor do texto */
-    --color-white: #FFFFFF;          /* Cor branca */
+    --color-primary: #4B69FD;        /* Cor primária (usada em fundo, bordas e títulos) */
+    --color-secondary: #FFF9EB;      /* Cor secundária (fundo das seções e itens) */
+    --color-tertiary: #C4C4C4;       /* Cor terciária (botão de adicionar) */
+    --color-button: #fe652b;         /* Cor do botão de sorteio */
+    --color-button-hover: #e55720;   /* Cor do botão de sorteio no hover */
+    --color-text: #444444;           /* Cor do texto geral */
+    --color-white: #FFFFFF;          /* Cor branca (fundo e texto) */
 }
 
-/* Reset de margens, padding e box-sizing para garantir consistência em diferentes navegadores */
+/* Reset de margens, padding e box-sizing para consistência entre navegadores */
 * {
     margin: 0;
     padding: 0;
@@ -18,161 +18,165 @@
 
 /* Estilos gerais do body */
 body {
-    height: 100vh;                    /* Ocupa toda a altura da tela */
-    background-color: var(--color-primary); /* Define o fundo da página */
-    display: flex;                    /* Usado para centralizar o conteúdo na tela */
-    justify-content: center;          /* Centraliza horizontalmente */
-    align-items: center;              /* Centraliza verticalmente */
+    height: 100vh;
+    background-color: var(--color-primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* Container principal */
 .main-content {
     display: flex;
-    flex-direction: column;           /* Organiza o conteúdo em coluna */
+    flex-direction: column;
     height: 100%;
     width: 100%;
 }
 
-/* Estilo do banner com o título e a imagem */
+/* Banner do título */
 .header-banner {
-    flex: 40%;                        /* 40% da altura da tela */
+    flex: 40%;
     display: flex;
-    justify-content: center;          /* Centraliza o conteúdo */
+    justify-content: center;
     align-items: center;
-    padding: 40px 0 0;                /* Espaçamento superior */
+    padding-top: 40px;
 }
 
-/* Seção onde o usuário digita os nomes dos amigos */
+/* Seção de entrada */
 .input-section {
-    flex: 60%;                        /* 60% da altura da tela */
-    background-color: var(--color-secondary); /* Cor de fundo da seção */
-    border-radius: 64px 64px 0 0;     /* Bordas arredondadas no topo */
+    flex: 60%;
+    background-color: var(--color-secondary);
+    border-radius: 64px 64px 0 0;
     display: flex;
-    flex-direction: column;           /* Organiza os itens em coluna */
+    flex-direction: column;
     align-items: center;
-    padding: 20px;                    /* Espaçamento interno */
+    padding: 20px;
     width: 100%;
 }
 
-/* Títulos principais */
+/* Título principal */
 .main-title {
-    font-size: 48px;                  /* Tamanho grande do título principal */
-    font-family: "Merriweather", serif; /* Fonte serifada */
-    font-weight: 900;                  /* Peso da fonte (negrito) */
-    font-style: italic;                /* Estilo da fonte (itálico) */
-    color: var(--color-white);         /* Cor do texto (branco) */
+    font-size: 48px;
+    font-family: "Merriweather", serif;
+    font-weight: 900;
+    font-style: italic;
+    color: var(--color-white);
 }
 
-/* Títulos das seções e listas */
+/* Títulos das seções */
 .section-title, .list-title {
-    font-family: "Inter", serif;      /* Fonte Inter, usada para subtítulos */
-    font-size: 24px;                  /* Tamanho da fonte */
-    font-weight: 700;                 /* Peso da fonte (negrito) */
-    color: var(--color-primary);      /* Cor primária do texto */
-    text-align: center;               /* Alinha o texto ao centro */
-    margin-bottom: 10px;              /* Espaçamento inferior */
+    font-family: "Inter", sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--color-primary);
+    text-align: center;
+    margin-bottom: 10px;
 }
 
-/* Estilos do campo de entrada e botões */
+/* Estilização do input e botão */
 .input-wrapper {
     display: flex;
-    justify-content: center;          /* Centraliza horizontalmente */
+    justify-content: center;
     width: 100%;
-    max-width: 600px;                 /* Limita a largura máxima */
-    margin-top: 20px;                 /* Espaçamento superior */
+    max-width: 600px;
+    margin-top: 20px;
+    align-items: center;
 }
 
+/* Campo de entrada */
 .input-name {
-    flex: 1;                          /* Ocupa o espaço disponível */
-    padding: 10px;                    /* Espaçamento interno */
-    border: 2px solid #000;           /* Borda preta */
-    border-radius: 25px 0 0 25px;     /* Bordas arredondadas no lado esquerdo */
-    font-size: 16px;                  /* Tamanho da fonte */
+    flex: 1;
+    padding: 10px;
+    border: 2px solid var(--color-text);
+    border-radius: 25px 0 0 25px;
+    font-size: 16px;
+    outline: none;
 }
 
-/* Botão de adicionar nome */
+/* Botões */
 button {
-    padding: 12px 20px;               /* Espaçamento interno do botão */
-    font-family: "Inter", sans-serif;  /* Fonte do botão */
-    font-size: 16px;                  /* Tamanho da fonte */
-    border-radius: 25px;              /* Bordas arredondadas do botão */
-    cursor: pointer;                  /* Cursor em forma de mãozinha */
+    padding: 12px 20px;
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
 }
 
-/* Botão de adicionar (para adicionar nome) */
+/* Botão de adicionar */
 .button-add {
-    background-color: var(--color-tertiary); /* Cor de fundo */
-    color: var(--color-text);                /* Cor do texto */
-    border-radius: 0 25px 25px 0;            /* Bordas arredondadas do lado direito */
+    background-color: var(--color-tertiary);
+    color: var(--color-text);
+    border-radius: 0 25px 25px 0;
 }
 
-/* Efeito hover do botão de adicionar */
 .button-add:hover {
-    background-color: #a1a1a1;              /* Cor de fundo quando o mouse passa por cima */
+    background-color: #a1a1a1;
 }
 
-/* Contêiner das listas (nomes adicionados e sorteio) */
+/* Container das listas */
 .lists-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;            /* Centraliza as listas */
+    justify-content: center;
     width: 100%;
-    max-width: 800px;                   /* Limita a largura máxima */
+    max-width: 800px;
     margin-top: 20px;
-    gap: 20px;                           /* Espaçamento entre as listas */
+    gap: 20px;
 }
 
-/* Estilos das caixas das listas */
+/* Estilo das caixas */
 .name-list-container, .result-box-container {
-    flex: 1;                             /* Cada item ocupa o mesmo espaço disponível */
+    flex: 1;
     display: flex;
-    flex-direction: column;              /* Organiza os itens em coluna */
-    align-items: center;                 /* Centraliza o conteúdo */
-    padding: 15px;                       /* Espaçamento interno */
-    border: 2px solid var(--color-primary); /* Borda com cor primária */
-    border-radius: 10px;                 /* Bordas arredondadas */
-    background-color: var(--color-white); /* Cor de fundo das caixas */
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    border: 2px solid var(--color-primary);
+    border-radius: 10px;
+    background-color: var(--color-white);
+    width: 100%;
+    max-width: 350px;
 }
 
-/* Estilo da lista de nomes adicionados */
+/* Lista de nomes */
 .name-list {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;                           /* Espaçamento entre os nomes */
-    justify-content: center;              /* Centraliza os itens */
+    gap: 10px;
+    justify-content: center;
 }
 
-/* Estilos para cada item na lista de amigos */
+/* Estilo dos itens da lista */
 .name-list div {
-    background-color: var(--color-secondary); /* Cor de fundo dos itens da lista */
-    border: 2px solid var(--color-primary);   /* Borda primária */
-    border-radius: 10px;                    /* Bordas arredondadas */
-    padding: 10px 20px;                     /* Espaçamento interno */
-    font-family: "Inter", sans-serif;       /* Fonte usada */
-    font-size: 18px;                       /* Tamanho da fonte */
-    color: var(--color-text);              /* Cor do texto */
+    background-color: var(--color-secondary);
+    border: 2px solid var(--color-primary);
+    border-radius: 10px;
+    padding: 10px 20px;
+    font-family: "Inter", sans-serif;
+    font-size: 18px;
+    color: var(--color-text);
     display: flex;
     align-items: center;
-    gap: 8px;                             /* Espaço entre o nome e outros elementos */
+    gap: 8px;
+    transition: transform 0.2s ease-in-out;
 }
 
-/* Estilo do resultado do sorteio */
+.name-list div:hover {
+    transform: scale(1.05);
+}
+
+/* Caixa de regras */
 .result-box {
     margin-top: 15px;
-    background-color: var(--color-secondary); /* Cor de fundo do resultado */
-    border: 2px solid var(--color-primary);   /* Borda primária */
-    border-radius: 10px;                     /* Bordas arredondadas */
-    padding: 15px 25px;                      /* Espaçamento interno */
-    font-size: 24px;                         /* Tamanho da fonte */
-    font-weight: bold;                       /* Texto em negrito */
-    text-align: center;                      /* Alinha o texto ao centro */
-    color: black;                            /* Cor preta para o nome sorteado */
-}
-
-/* Adicionando emoji ao nome sorteado */
-.result-box::after {
-    content: " 🎉"; /* Emoji de festa */
-    font-size: 24px; /* Tamanho do emoji */
+    background-color: var(--color-secondary);
+    border: 2px solid var(--color-primary);
+    border-radius: 10px;
+    padding: 15px;
+    font-size: 18px;
+    text-align: center;
+    color: var(--color-text);
+    width: 100%;
 }
 
 /* Botão de sorteio */
@@ -180,14 +184,52 @@ button {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--color-button);  /* Cor de fundo do botão */
-    color: var(--color-white);              /* Cor do texto */
-    margin-top: 20px;                       /* Espaço superior */
-    padding: 14px 25px;                     /* Espaçamento interno */
-    font-size: 18px;                        /* Tamanho da fonte */
+    background-color: var(--color-button);
+    color: var(--color-white);
+    margin-top: 20px;
+    padding: 14px 25px;
+    font-size: 18px;
 }
 
-/* Efeito hover do botão de sorteio */
 .button-draw:hover {
-    background-color: var(--color-button-hover); /* Cor de fundo quando o mouse passa por cima */
+    background-color: var(--color-button-hover);
+}
+
+/* Estilos para telas menores */
+@media (max-width: 768px) {
+    .main-title {
+        font-size: 36px;
+    }
+
+    .section-title, .list-title {
+        font-size: 20px;
+    }
+
+    .input-wrapper {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .input-name {
+        border-radius: 25px;
+        width: 100%;
+    }
+
+    .button-add {
+        border-radius: 25px;
+        width: 100%;
+    }
+
+    .lists-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .name-list-container, .result-box-container {
+        max-width: 100%;
+    }
+
+    .button-draw {
+        width: 100%;
+    }
 }

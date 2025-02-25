@@ -1,70 +1,129 @@
 // Array para armazenar os nomes dos amigos
 let amigos = [];
+// Objeto para armazenar os resultados do sorteio ("quem tirou quem")
+let resultadoSorteio = {};
+// Array para acompanhar os nomes disponíveis para sorteio
+let disponiveis = [];
+// Variável para rastrear quem é o próximo a sortear
+let proximoSorteador = null;
+// Variável para controlar se o alerta inicial já foi exibido
+let alertaParExibido = false;
 
-// Adiciona um evento ao campo de texto, escutando a tecla "Enter" para adicionar um amigo
+// Adiciona evento de "Enter" ao campo de texto para adicionar amigos
 document.getElementById('amigo').addEventListener("keypress", function(event) {
-    // Se a tecla pressionada for "Enter", chama a função para adicionar um amigo
     if (event.key === "Enter") {
         adicionarAmigo();
     }
 });
 
-// Função que adiciona um novo amigo à lista
+// Função para adicionar um amigo à lista
 function adicionarAmigo() {
-    // Recupera o valor digitado no campo de input
     const nomeInput = document.getElementById('amigo');
     const nome = nomeInput.value.trim(); // Remove espaços extras
 
-    // Verifica se o nome está vazio
     if (nome === "") {
-        alert("Por favor, insira um nome válido."); // Exibe alerta se o campo estiver vazio
+        alert("Por favor, insira um nome válido.");
         return;
     }
 
-    // Verifica se o nome já foi adicionado à lista de amigos
     if (amigos.includes(nome)) {
-        alert("Este nome já foi adicionado!"); // Exibe alerta se o nome já estiver na lista
+        alert("Este nome já foi adicionado!");
         return;
     }
 
-    // Adiciona o nome à lista de amigos
-    amigos.push(nome);
-    nomeInput.value = ""; // Limpa o campo de input após adicionar o nome
-    atualizarLista(); // Atualiza a lista exibida na tela
+    amigos.push(nome); // Adiciona o nome ao array
+    nomeInput.value = ""; // Limpa o campo de input
+    atualizarLista(); // Atualiza a lista na tela
+    reiniciarSorteio(); // Reinicia o sorteio para refletir a nova lista
+
+    // Exibe o alerta sobre números pares apenas na primeira adição
+    if (!alertaParExibido && amigos.length === 1) {
+        alert("Bem-vindo ao Amigo Secreto! Adicione um número par de participantes para sortear.");
+        alertaParExibido = true;
+    }
 }
 
-// Função que atualiza a lista de amigos na interface
+// Função para atualizar a lista de nomes disponíveis na interface
 function atualizarLista() {
-    // Recupera o elemento que vai conter a lista de amigos
     const listaAmigos = document.getElementById('listaAmigos');
-    listaAmigos.innerHTML = ""; // Limpa a lista antes de atualizá-la
-
-    // Itera sobre o array de amigos e cria um novo item na lista para cada nome
-    amigos.forEach(nome => {
-        const div = document.createElement('div'); // Cria um novo elemento de div
-        div.textContent = nome; // Define o nome do amigo como o texto da div
-        listaAmigos.appendChild(div); // Adiciona a div na lista
+    listaAmigos.innerHTML = ""; // Limpa a lista atual
+    disponiveis.forEach(nome => {
+        const div = document.createElement('div');
+        div.textContent = nome; // Adiciona o nome ao elemento
+        listaAmigos.appendChild(div); // Adiciona o elemento à lista
     });
 }
 
-// Função que sorteia um amigo secreto
+// Função para reiniciar o sorteio
+function reiniciarSorteio() {
+    resultadoSorteio = {}; // Limpa os resultados anteriores
+    disponiveis = [...amigos]; // Recarrega os nomes disponíveis
+    proximoSorteador = amigos.length > 0 ? amigos[0] : null; // Define o primeiro como próximo sorteador
+    atualizarLista(); // Atualiza a lista na tela
+    // Define a regra fixa na caixa "Regras"
+    document.getElementById('resultado').innerHTML = "O presente deve custar de R$ 100 a R$ 200 reais, tá bem? Vamos caprichar!";
+}
+
+// Função para realizar o sorteio de um amigo
 function sortearAmigo() {
-    // Verifica se a lista de amigos está vazia
-    if (amigos.length === 0) {
-        alert("A lista está vazia. Adicione nomes antes de sortear."); // Exibe alerta caso não haja amigos
+    // Verifica se o número de amigos é par
+    if (amigos.length % 2 !== 0) {
+        alert("O número de participantes deve ser par para sortear! Adicione ou remova nomes.");
         return;
     }
 
-    // Gera um índice aleatório baseado no tamanho da lista de amigos
-    const indiceAleatorio = Math.floor(Math.random() * amigos.length);
+    if (amigos.length < 2) {
+        alert("Adicione pelo menos 2 amigos para sortear!");
+        return;
+    }
 
-    // Recupera o nome do amigo sorteado
-    const nomeSorteado = amigos[indiceAleatorio];
+    // Inicializa no primeiro sorteio
+    if (Object.keys(resultadoSorteio).length === 0 && disponiveis.length === 0) {
+        disponiveis = [...amigos];
+        proximoSorteador = amigos[0];
+    }
 
-    // Exibe o nome sorteado com um emoji de festa
-    document.getElementById('resultado').innerHTML = `<strong>${nomeSorteado} 🎉</strong>`;
+    // Verifica se o sorteio terminou
+    if (disponiveis.length === 0 || Object.keys(resultadoSorteio).length === amigos.length) {
+        alert("Sorteio concluído! Todos já tiraram seus amigos secretos.");
+        document.getElementById('resultado').innerHTML = "O presente deve custar de R$ 100 a R$ 200 reais, tá bem? Vamos caprichar!";
+        return;
+    }
 
-    // Remove o nome sorteado da lista para não sorteá-lo novamente
-    amigos.splice(indiceAleatorio, 1);
-    atualizarLista(); // Atualiza a lista de amigos na tela
+    const sorteador = proximoSorteador; // Pega o sorteador atual
+    let amigoSorteado;
+    let tentativas = 0;
+    const maxTentativas = 10;
+
+    // Sorteia um amigo, evitando tirar a si mesmo ou criar ciclos diretos
+    do {
+        const indiceAleatorio = Math.floor(Math.random() * disponiveis.length);
+        amigoSorteado = disponiveis[indiceAleatorio];
+        tentativas++;
+    } while (
+        (amigoSorteado === sorteador || // Evita tirar a si mesmo
+        (resultadoSorteio[amigoSorteado] === sorteador && disponiveis.length > 1)) && // Evita ciclo direto
+        tentativas < maxTentativas
+    );
+
+    if (tentativas >= maxTentativas) {
+        alert("Não foi possível sortear sem criar ciclos diretos. Tente reiniciar!");
+        reiniciarSorteio();
+        return;
+    }
+
+    // Registra o sorteio
+    resultadoSorteio[sorteador] = amigoSorteado;
+    // Remove o sorteado da lista de disponíveis
+    disponiveis = disponiveis.filter(nome => nome !== amigoSorteado);
+    atualizarLista();
+
+    // Define o próximo sorteador como o amigo sorteado
+    proximoSorteador = amigoSorteado;
+
+    // Exibe o resultado apenas para o sorteador
+    alert(`${sorteador}, você tirou: ${amigoSorteado} 🎉\nPróximo a sortear: ${proximoSorteador}`);
+
+    // Mantém a regra fixa na caixa "Regras"
+    document.getElementById('resultado').innerHTML = "O presente deve custar de R$ 100 a R$ 200 reais, tá bem? Vamos caprichar!";
 }
