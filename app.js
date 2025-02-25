@@ -1,11 +1,15 @@
 // Array para armazenar os nomes dos amigos
 let amigos = [];
+
 // Objeto para armazenar os resultados do sorteio ("quem tirou quem")
 let resultadoSorteio = {};
+
 // Array para acompanhar os nomes disponíveis para sorteio
 let disponiveis = [];
+
 // Variável para rastrear quem é o próximo a sortear
 let proximoSorteador = null;
+
 // Variável para controlar se o alerta inicial já foi exibido
 let alertaParExibido = false;
 
@@ -124,6 +128,6 @@ function sortearAmigo() {
     // Exibe o resultado apenas para o sorteador
     alert(`${sorteador}, você tirou: ${amigoSorteado} 🎉\nPróximo a sortear: ${proximoSorteador}`);
 
-    // Mantém a regra fixa na caixa "Regras"
+    // Mantém a regra fixa na caixa "Combinados?"
     document.getElementById('resultado').innerHTML = "O presente deve custar de R$ 100 a R$ 200 reais, tá bem? Vamos caprichar!";
 }

@@ -166,7 +166,7 @@ button {
     transform: scale(1.05);
 }
 
-/* Caixa de regras */
+/* Caixa de Combinados? */
 .result-box {
     margin-top: 15px;
     background-color: var(--color-secondary);
@@ -187,7 +187,7 @@ button {
     background-color: var(--color-button);
     color: var(--color-white);
     margin-top: 20px;
-    padding: 14px 25px;
+    padding: 15px 25px;
     font-size: 18px;
 }
 
