@@ -1,42 +1,37 @@
 # Amigo Secreto
 
-![Banner do Amigo Secreto](assets/amigo-secreto.png)
+<div align="center">
+  <img src="assets/amigo-secreto.png" alt="Banner do Amigo Secreto">
+</div>
 
-Bem-vindo ao **Amigo Secreto**, uma aplicação web simples e divertida para organizar sorteios de amigo secreto entre amigos ou familiares!
-
-Bem-vindo ao **Amigo Secreto**, uma aplicação web simples e divertida para organizar sorteios de amigo secreto entre amigos ou familiares! Com uma interface amigável e estilizada, você pode adicionar nomes, realizar o sorteio e garantir que todos saibam quem tiraram de forma prática e divertida.
-
-## Sorteador de Amigo Secreto 🎉
-Você pode adicionar nomes de amigos à lista e sortear um nome aleatório para realizar o tradicional "Amigo Secreto". Além disso, o sistema garante que cada amigo seja sorteado apenas uma vez, mantendo a surpresa!
+Uma aplicação web simples e divertida para organizar sorteios de **Amigo Secreto** entre amigos ou familiares!
 
 ## Demonstração
 
-![Demonstração](assets/amigo-secreto-gif.gif)
+<div align="center">
+  <img src="assets/amigo-secreto-gif.gif" alt="Demonstração">
+</div>
 
 ## Funcionalidades 🛠️
-Adicionar nomes de amigos: Insira os nomes de seus amigos e adicione-os à lista de sorteio.
-Sortear um nome aleatório: Realize o sorteio e descubra qual amigo ficou com você!
-Evitar repetições: O sistema garante que um nome não seja sorteado mais de uma vez.
-Interface simples e intuitiva: A interação é fácil e permite adicionar novos amigos rapidamente.
+- Adicione nomes de amigos à lista.
+- Sorteie um nome aleatório para cada participante.
+- Garante que ninguém tire a si mesmo e que cada nome seja sorteado só uma vez.
 
-## Tecnologias Utilizadas 🖥️
-HTML
-CSS
-JavaScript
+## Como Usar
+1. Digite o nome de um amigo e clique em "Adicionar".
+2. Repita até adicionar todos os participantes.
+3. Clique em "Sortear Amigo" para ver os resultados! 🎉
 
-## Exemplo de uso:
-Adicione alguns nomes de amigos.
-Clique em "Sortear amigo" para descobrir quem é o sorteado! 🎉
+## Tecnologias 🖥️
+- HTML
+- CSS
+- JavaScript
 
-## Acesse o Projeto 🌐
-Se preferir, você pode acessar o projeto online através deste link:
+## Acesse Online 🌐
+[https://ribeiroarley.github.io/sorteador-amigo-secreto/](https://ribeiroarley.github.io/sorteador-amigo-secreto/)
 
-https://ribeiroarley.github.io/sorteador-amigo-secreto/
-
-# Desenvolvido por 💼
+## Desenvolvido por 💼
 Arley Ribeiro da Silva Xavier
 
-# Agradecimentos
-Gostaria de agradecer ao programa ONE - Oracle Next Education em parceria com a Alura pela oportunidade de aprendizado.
-Esta formação foi uma etapa importante no meu desenvolvimento como programador, e estou muito grato por fazer parte dessa jornada.
-Agradeço também ao time da Alura, aos mentores e a todos os colegas de aprendizagem que tornaram essa experiência ainda mais enriquecedora.
+## Agradecimentos
+Agradeço ao **ONE - Oracle Next Education** e à **Alura** pela oportunidade de aprendizado!
