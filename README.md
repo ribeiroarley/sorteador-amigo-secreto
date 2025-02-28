@@ -1,5 +1,17 @@
+# Amigo Secreto
+
+![Banner do Amigo Secreto](assets/amigo-secreto.png)
+
+Bem-vindo ao **Amigo Secreto**, uma aplicação web simples e divertida para organizar sorteios de amigo secreto entre amigos ou familiares!
+
+Bem-vindo ao **Amigo Secreto**, uma aplicação web simples e divertida para organizar sorteios de amigo secreto entre amigos ou familiares! Com uma interface amigável e estilizada, você pode adicionar nomes, realizar o sorteio e garantir que todos saibam quem tiraram de forma prática e divertida.
+
 ## Sorteador de Amigo Secreto 🎉
 Você pode adicionar nomes de amigos à lista e sortear um nome aleatório para realizar o tradicional "Amigo Secreto". Além disso, o sistema garante que cada amigo seja sorteado apenas uma vez, mantendo a surpresa!
+
+## Demonstração
+
+![Demonstração](assets/amigo-secreto-gif.gif)
 
 ## Funcionalidades 🛠️
 Adicionar nomes de amigos: Insira os nomes de seus amigos e adicione-os à lista de sorteio.
